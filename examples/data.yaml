@@ -1,0 +1,43 @@
+Conditions:
+- cond1
+- cond2
+Data:
+- name: start
+  speaker_id: 1
+  text: Hi!
+  next:
+  - 1
+  - 2
+
+- speaker_id: 0
+  text: Hi! What's your name?
+  next:
+  - 2
+- speaker_id: 0
+  text: Hi! My name is {}!
+  next:
+  - 2
+
+- speaker_id: 1
+  text: Nice to meet you {}!
+  next:
+  - 2
+- speaker_id: 1
+  text: My name is {}!
+  next:
+  - 1
+
+- speaker_id: 0
+  text: Only Option
+  next:
+  - 2
+- speaker_id: 0
+  text: "[Special] cond1 is on!"
+  next:
+  -  1
+  requires:
+  - cond1
+
+- speaker_id: 1
+  text: See you soon!
+  closer: true

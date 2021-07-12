@@ -1,0 +1,40 @@
+Conditions:
+- cond1
+- cond2
+Data:
+- name: start
+  speaker_id: 1
+  text: Hi! My name is A
+  next:
+  - 1
+  - 2
+
+- speaker_id: 0
+  text: How was your day?
+  next:
+  - 2
+- speaker_id: 0
+  text: My name is B!
+  next:
+  - 3
+  conditions:
+  - cond1
+
+- speaker_id: 1
+  text: My day was fine!
+  next:
+  - 1
+
+- speaker_id: 1
+  text: Whats your name?
+  next:
+  - -2
+
+- speaker_id: 1
+  text: Nice to meet you B!
+  next:
+  - 1
+
+- speaker_id: 1
+  text: I have to go now!
+  closer: true
