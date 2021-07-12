@@ -22,6 +22,10 @@ int main(int argc, char* argv[]) {
 		if(head->closer) break;
 		auto next = tree.get_next(head->id);
 		if(next.empty()) break;
+		/*
+		* Bit of a dillema, i don't know what to do incase of mixed `next` entries
+		* Maybe throw an error over it?
+		*/
 		if(next[0]->speaker_id != playerID) {
 			head = next[0];
 		} else {
